@@ -1,5 +1,5 @@
 # Principal Components Analysis
-Principal Components Analysis (PCA), that tries to identify the subspace in which the data approximately lies. PCA is computationally efficient, it only requires an eigenvector calculation.     
+Principal Components Analysis (PCA), that tries to identify the subspace in which the data approximately lies. PCA is computationally efficient, it only requires an eigenvector calculation. Additionally, it is an unsupervised learning technique used for dimensionality reduction.    
 
 Suppose we are given a dataset $D = \{x_i; i = 1, \dots, n\}$ of attributes of $n$ different vehicles, such as their maximum speed, turn radius, and
 so on. Let $x_i \in \mathbb{R}^d$ for each $i \space (d \ll n)$.  But unknown to us, two different attributes some $x_i$ and $x_j$ respectively give a car’s maximum speed measured in miles per hour, and the maximum speed measured in kilometers per hour. These two attributes are therefore almost linearly dependent, up to only small differences introduced by rounding off to the nearest mph or kph. Thus, the data really lies approximately on an $d − 1$ dimensional subspace. How can we automatically detect, and perhaps remove, this redundancy?   
@@ -18,7 +18,7 @@ We see that the projected data for the following data points has a fairly large 
 $\text{fig. 2}$  
 
 Here, the projection have a significantly smaller variance and are much closer to the origin.  
-We would like to automatically select the direction $u$ that preserves the maximum variance and reduces the reconstruction error. (From the above two graphs, better variation preservation is in figure 1)  
+We would like to automatically select the direction $u$ that preserves the maximum variance and reduces the reconstruction error.
 
 ## Formulation  
 To formalize this,   
@@ -26,7 +26,7 @@ To formalize this,
 Given:- Dataset $D = \{x_1, \dots, x_n\}, x_i \in \mathbb{R}^d$.  
 Goal:- Project $D$ onto a $m$ dimensional subsace, where $m < d$.  
 
-Note that given a unit vector $u$ and a point $x$ , the length of the projection of $x$ onto $u$ is given by $x^Tu$ i.e if $x_i$ is a point in our dataset (one of the crosses in the plot), then it's projection onto $u$ (the corresponding bold dot in the plot) is distance $x^Tu$ from the origin. Hence to maximize the variance of the projection, we would like to choose a unit length $u$ so as to maximize variance preservation:  
+Note that given a unit vector $u$ and a point $x$ , the length of the projection of $x$ onto $u$ is given by $x^Tu$ i.e if $x_i$ is a point in our dataset (one of the crosses in the plot), then it's projection onto $u$ (the corresponding bold dot in the plot) is distance $x^Tu$ from the origin. Hence to maximize the variance of the projection, we would like to choose a unit length $u$ so as to maximize variance:  
 
 $\rightarrow \text{Projection}_{u}(x) = (x^Tu)u$   
 $\rightarrow \text{Mean of Projection}_{u}(x) = (\bar{x}^Tu)u$   
@@ -74,5 +74,7 @@ $$\tilde{x}_i = \sum_{j=1}^k \alpha_j u_j, \text{where} \space \alpha_j = (x_i^T
 
 **Step 5:** Calculate the reconstruction error and projected variance as:   
 $$\text{Reconstructor Error} = J = \frac{1}{n} \sum_{i=1}^n ||x_i - \tilde{x}_i||^2$$    
-$$\text{Projected variance} = \lambda_1 + \lambda_2+ \dots + \lambda_k$$
+$$\text{Projected variance} = \lambda_1 + \lambda_2+ \dots + \lambda_k$$  
+
+> Note: Since the covariance matrix is symmetric, its eigenvector (or also known as principal component) is orthogonal to each other.
 
