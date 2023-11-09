@@ -26,12 +26,12 @@ To formalize this,
 Given:- Dataset $D = \{x_1, \dots, x_n\}, x_i \in \mathbb{R}^d$.  
 Goal:- Project $D$ onto a $m$ dimensional subsace, where $m < d$.  
 
-Note that given a unit vector $u$ and a point $x$ , the length of the projection of $x$ onto $u$ is given by $x^Tu$ i.e if $x_i$ is a point in our dataset (one of the crosses in the plot), then it's projection onto $u$ (the corresponding bold dot in the plot) is distance $x^Tu$ from the origin. Hence to maximize the variance of the projection, we would like to choose a unit length $u$ so as to maximize:  
+Note that given a unit vector $u$ and a point $x$ , the length of the projection of $x$ onto $u$ is given by $x^Tu$ i.e if $x_i$ is a point in our dataset (one of the crosses in the plot), then it's projection onto $u$ (the corresponding bold dot in the plot) is distance $x^Tu$ from the origin. Hence to maximize the variance of the projection, we would like to choose a unit length $u$ so as to maximize variance preservation:  
 
-$\rightarrow \text{Projection}_{u}(x) = (u^Tx)u$   
-$\rightarrow \text{Mean of Projection}_{u}(x) = (u^T\bar{x})u$   
-$\rightarrow \text{Variance of Projection}_{u}(x) = \frac{1}{n} \sum_{i=1}^n (u^Tx_i - u^T\bar{x})^2$  
-$= \frac{1}{n} \sum_{i=1}^n [u^T(x_i - \bar{x})]^2$
+$\rightarrow \text{Projection}_{u}(x) = (x^Tu)u$   
+$\rightarrow \text{Mean of Projection}_{u}(x) = (\bar{x}^Tu)u$   
+$\rightarrow \text{Variance of Projection}_{u}(x) = \frac{1}{n} \sum_{i=1}^n (x_i^Tu - \bar{x}^Tu)^2$  
+$= \frac{1}{n} \sum_{i=1}^n [u(x_i^T - \bar{x}^T)]^2$   
 $= \frac{1}{n} \sum_{i=1}^n u^T(x_i - \bar{x})(x_i - \bar{x})^Tu$  
 
 > Digression: $C = \frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})(x_i - \bar{x})^T$ is known as the [covariance matrix](https://youtu.be/152tSYtiQbw?si=FzQkXLCWVyccBB5d) and $u$ is a constant variable.   
