@@ -41,7 +41,7 @@ $\therefore \text{Variance of Projection}_{u}(x) = u^TCu$
 Next Step, we'll try to maximize the variance of the projection.    
 
 $\text{Max} \space (u^TCu)$ with subject to constraint (s.t) $u^TCu = 1$, we'll write in the form:  
-$\begin{bmatrix}\text{Max} \space  (u^TCu)\\ \text{s.t} \space (u^TCu) = 1\end{bmatrix}$  
+$\begin{bmatrix}\text{Max} \space  (u^TCu)\\ \text{s.t} \space (u^Tu) = 1\end{bmatrix}$  
 
 When employing the [Lagrange multiplier](https://youtu.be/5A39Ht9Wcu0?si=-xl-MoNk98Q8dDEv) method and considering the objective function, the result is:   
 
