@@ -1,5 +1,5 @@
 # Principal Components Analysis
-Principal Components Analysis (PCA), that tries to identify the subspace in which the data approximately lies.   
+Principal Components Analysis (PCA), that tries to identify the subspace in which the data approximately lies. PCA is computationally efficient, it only requires an eigenvector calculation.     
 
 Suppose we are given a dataset $D = \{x_i; i = 1, \dots, n\}$ of attributes of $n$ different vehicles, such as their maximum speed, turn radius, and
 so on. Let $x_i \in \mathbb{R}^d$ for each $i \space (d \ll n)$.  But unknown to us, two different attributes some $x_i$ and $x_j$ respectively give a car’s maximum speed measured in miles per hour, and the maximum speed measured in kilometers per hour. These two attributes are therefore almost linearly dependent, up to only small differences introduced by rounding off to the nearest mph or kph. Thus, the data really lies approximately on an $d − 1$ dimensional subspace. How can we automatically detect, and perhaps remove, this redundancy?   
