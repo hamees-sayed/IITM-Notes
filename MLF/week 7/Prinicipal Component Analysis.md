@@ -1,6 +1,11 @@
 # Principal Components Analysis
-Principal Components Analysis (PCA), that tries to identify the subspace in which the data approximately lies. PCA is computationally efficient, it only requires an eigenvector calculation. Additionally, it is an unsupervised learning technique used for dimensionality reduction.    
+Principal Components Analysis (PCA), that tries to identify the subspace in which the data approximately lies. PCA is computationally efficient, it only requires an eigenvector calculation. Additionally, it is an unsupervised learning technique used for dimensionality reduction.     
 
+Imagine you have a dataset in three dimensions: height, weight, and age of a group of people. Each person in the dataset is a data point represented by a vector (height, weight, age). Now, PCA aims to find the directions in which the data varies the most.  
+In this case, let's say that height and weight have high variance compared to age. PCA would identify the directions (principal components) along which the data varies the most. These directions are orthogonal to each other.   
+Now, instead of representing each person in the original three-dimensional space, PCA allows you to project them onto a new subspace defined by these principal components. This new subspace retains the most important information about the data while reducing the dimensionality.    
+
+Getting a little technical...   
 Suppose we are given a dataset $D = \{x_i; i = 1, \dots, n\}$ of attributes of $n$ different vehicles, such as their maximum speed, turn radius, and
 so on. Let $x_i \in \mathbb{R}^d$ for each $i \space (d \ll n)$.  But unknown to us, two different attributes some $x_i$ and $x_j$ respectively give a car’s maximum speed measured in miles per hour, and the maximum speed measured in kilometers per hour. These two attributes are therefore almost linearly dependent, up to only small differences introduced by rounding off to the nearest mph or kph. Thus, the data really lies approximately on an $d − 1$ dimensional subspace. How can we automatically detect, and perhaps remove, this redundancy?   
 
