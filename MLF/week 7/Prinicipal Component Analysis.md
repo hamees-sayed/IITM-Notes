@@ -17,9 +17,9 @@ Project given data onto a lower dimensional subspace (dimensionality reduction) 
 ![/images/graph_1.png](./images/graph_1.png)   
 $\text{fig. 1}$   
 
-We see that the projected data for the following data points has a fairly large variance, and the points tend to be far from zero. In contrast, suppose had instead picked the following direction: 
+We see that the projected data for the following data points has a fairly large variance, and the points tend to be far from zero. In contrast, suppose had instead picked the following direction:
 
-![/images/graph_2.png](./images/graph_2.png)   
+![/images/graph_2.png](./images/graph_2.png)        
 $\text{fig. 2}$  
 
 Here, the projection have a significantly smaller variance and are much closer to the origin.  
@@ -39,13 +39,13 @@ $\rightarrow \text{Variance of Projection}_{u}(x) = \frac{1}{n} \sum_{i=1}^n (x_
 $= \frac{1}{n} \sum_{i=1}^n [u(x_i^T - \bar{x}^T)]^2$   
 $= \frac{1}{n} \sum_{i=1}^n u^T(x_i - \bar{x})(x_i - \bar{x})^Tu$  
 
-> Digression: $C = \frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})(x_i - \bar{x})^T$ is known as the [covariance matrix](https://youtu.be/152tSYtiQbw?si=FzQkXLCWVyccBB5d) and $u$ is a constant variable.   
+> Digression: $C = \frac{1}{n} \sum_{i=1}^n (x_i - \bar{x})(x_i - \bar{x})^T$ is known as the [covariance matrix](https://youtu.be/152tSYtiQbw?si=FzQkXLCWVyccBB5d) and $u$ is a constant.   
 
 $\therefore \text{Variance of Projection}_{u}(x) = u^TCu$  
 ---
 Next Step, we'll try to maximize the variance of the projection.    
 
-$\text{Max} \space (u^TCu)$ with subject to constraint (s.t) $u^TCu = 1$, we'll write in the form:  
+$\text{Max} \space (u^TCu)$ with subject to constraint (s.t) $u^Tu = 1$ (spectral theorem), we'll write in the form:  
 $\begin{bmatrix}\text{Max} \space  (u^TCu)\\ \text{s.t} \space (u^Tu) = 1\end{bmatrix}$  
 
 When employing the [Lagrange multiplier](https://youtu.be/5A39Ht9Wcu0?si=-xl-MoNk98Q8dDEv) method and considering the objective function, the result is:   
@@ -82,4 +82,3 @@ $$\text{Reconstructor Error} = J = \frac{1}{n} \sum_{i=1}^n ||x_i - \tilde{x}_i|
 $$\text{Projected variance} = \lambda_1 + \lambda_2+ \dots + \lambda_k$$  
 
 > Note: Since the covariance matrix is symmetric, its eigenvector (or also known as principal component) is orthogonal to each other.
-
