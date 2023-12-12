@@ -82,3 +82,6 @@ $$\text{Reconstructor Error} = J = \frac{1}{n} \sum_{i=1}^n ||x_i - \tilde{x}_i|
 $$\text{Projected variance} = \lambda_1 + \lambda_2+ \dots + \lambda_k$$  
 
 > Note: Since the covariance matrix is symmetric, its eigenvector (or also known as principal component) is orthogonal to each other.
+
+Referece:
+[Principal Component Analysis](https://ekamperi.github.io/mathematics/2020/11/01/principal-component-analysis-lagrange-multiplier.html)

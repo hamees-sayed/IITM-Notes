@@ -1,0 +1,3 @@
+1. [Introduction to Langrage Multipliers](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/constrained-optimization/a/lagrange-multipliers-examples)
+2. [Lagrange multipliers, examples](https://www.khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/constrained-optimization/a/lagrange-multipliers-examples)
+3. [Constrained Optimization, pg. 233](https://mml-book.github.io/book/mml-book.pdf)
